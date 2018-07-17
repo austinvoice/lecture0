@@ -26,5 +26,16 @@ def main():
 	bar.setWidth(2)
 	bar.draw(win)
 
+	# Draw bars in successive years
+	for year in range(1,11):
+		# calculate the value for the next year
+		principal = principal * (1 + apr)
+		# draw bar for this value
+		x11 = year * 25 + 40
+		height = principal * .02
+		bar = Rectangle(Point(x11, 230), Point(x11+25, 230-height))
+		bar.setFill('green')
+		bar.setWidth(2)
+		bar.draw(win)
 
 main()
