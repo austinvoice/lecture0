@@ -19,7 +19,12 @@ def main():
 	Text(Point(20, 80), '7.5K').draw(win)
 	Text(Point(20, 30), '10.0K').draw(win)
 
-
+	# Draw bar for initial principal
+	height = principal * .02
+	bar = Rectangle(Point(20, 230), Point(65, 230-height))
+	bar.setFill('green')
+	bar.setWidth(2)
+	bar.draw(win)
 
 
 main()
