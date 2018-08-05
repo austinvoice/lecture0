@@ -13,7 +13,23 @@ def handleKey(k, win):
 		win.setBackground("lightblue")
 
 def handleClick(pt, win):
-	pass
+	# create an entry for user to type in
+	entry = Entry(pt, 10)
+	entry.draw(win)
+
+	# go modal: loop until user types <Enter>
+	while True:
+		key = win.getKey()
+		if key == "Return": break
+
+	# undraw the entry and create a draw Text0
+	entry.undraw()
+	typed = entry.getText()
+	Text(pt, typed).draw(win)
+
+	# clear/ignore mouse clicks during the text entry
+	win.checkMouse()
+
 
 def main():
 	win = GraphWin("Color Window", 500, 500)
